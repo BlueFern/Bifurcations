@@ -1,0 +1,34 @@
+
+#==============
+# AUTO Demo ms - codimension 1 bifurcation diagram of the Meyer & Stryer SMC model
+#
+# In terminal: "auto ms.auto"
+#==============
+
+# Load files
+m = load(e='ms',c='ms')
+
+# Run with IPS=-2 to obtain steady state
+print "\n***Finding steady state***\n"
+fp = run(m, IPS=-2)
+
+# Run with IPS=1 to obtain fixed points
+print "\n***Finding fixed points and codimension 1 bifurcations***\n"
+ms = run(fp('EP2'), IPS=1, NMX=1000, ICP=['beta'])
+
+# Run with IPS=2 to obtain periodic orbits originating from Hopf no.1 (HB1). If there are other Hopf bifurcations then add another line with HB2 or HB3 etc.
+print "\n***Finding periodic orbits from Hopf no.1***\n"
+ms = ms + run(ms('HB1'), IPS=2, ICP=[1,11], ILP=1, NMX=300, NPR=100, NTST=500)
+
+# Save the data
+save(ms, 'ms')
+clean()
+
+# Plot the bifurcation diagram
+@pp ms
+
+
+
+
+
+

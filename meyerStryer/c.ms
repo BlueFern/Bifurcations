@@ -1,0 +1,71 @@
+############################
+# important primary settings
+############################
+
+# Problem Constants
+NDIM=3
+
+# Output Control
+unames={1: 'Cai', 2: 'IP3', 3: 'Cas'}
+parnames={1: 'R', 11: 'period'}
+NPR=10000
+
+# Free Parameters
+ICP=['R']
+
+# Limits
+UZSTOP={'R': [0.0, 1.0]}, NMX=100000
+
+# Computation Constants
+IPS=1 ###
+IRS=0
+
+# Continuation Step Size
+DS=0.01, DSMIN=0.0001, DSMAX=0.06
+
+# Discretization Constants
+NTST=50
+
+IPLT=-1
+
+THL={'PERIOD': 0.0}
+
+################################
+# default secondary settings
+################################
+
+# Problem Constants
+#NPAR=36, JAC=0
+
+# Discretization Constants
+#NCOL=4, IAD=3
+
+# Tolerances
+#EPSL=1e-7, EPSU=1e-7, EPSS=1e-5, ITMX=9, NWTN=3, ITNW=5
+
+# Continuation Step Size
+#IADS=1, THL={'PERIOD': 0.0}, THU={}
+
+# Limits
+#STOP = []
+#RL0=-1.7976e+308, RL1=1.7976e+308, A0=-1.7976e+308, A1=1.7976e+308
+
+# Computation Constants
+#ILP=1, SP=[], ISP=2, ISW=1, MXBF=10, s='', dat='', U={}, PAR={}, TY=''
+
+# Output Control
+#e = '', sv='', IBR=0, LAB=0, IIS=3, IID=2, IPLT=0, UZR={}
+
+###################
+# inactive settings
+###################
+
+# Problem Constants
+#NBC=0, NINT=0
+
+################################
+# HomCont settings
+################################
+
+#NUNSTAB = -1, NSTAB = -1, IEQUIB = 1, ITWIST = 0, ISTART = 5
+#IREV = [], IFIXED = [], IPSI = []
