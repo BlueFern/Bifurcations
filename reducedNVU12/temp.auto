@@ -1,0 +1,6 @@
+save(rnvu, 'rnvu')
+clean()
+
+# Plot the bifurcation diagram
+@pp rnvu
+

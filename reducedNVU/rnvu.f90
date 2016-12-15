@@ -90,8 +90,8 @@
       DOUBLE PRECISION, INTENT(INOUT) :: U(NDIM),PAR(*)
       DOUBLE PRECISION, INTENT(IN) :: T
 
-      PAR(1)=0.1d0
-      PAR(2)=9200.d0
+      PAR(1)=0.18d0
+      PAR(2)=3000.d0
 
       U(5)=1.d0
       U(2)=1.d0

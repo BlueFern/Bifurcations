@@ -1,0 +1,33 @@
+
+#==============
+# AUTO Demo rnvu4 - codimension 1 bifurcation diagram of the reduced SMC/EC model based on NVU
+#
+# In terminal: "auto rnvu4.auto"
+#==============
+
+# Load files
+r = load(e='rnvu',c='rnvu')
+
+# Run with IPS=-2 to obtain steady state
+print "\n***Finding steady state***\n"
+fp = run(r, IPS=-2)
+
+# Run with IPS=1 to obtain fixed points, DS=-0.01 to go backwards through Kp
+print "\n***Finding fixed points and codimension 1 bifurcations***\n"
+rnvu = run(fp('EP2'), IPS=1, NMX=1000000, ICP=['K_p'], DS=-0.01)
+
+# Run with IPS=2 to obtain periodic orbits originating from Hopf no.1 (HB1). If there are other Hopf bifurcations then add another line with HB2 or HB3 etc.
+#print "\n***Finding periodic orbits from Hopf no.1***\n"
+rnvu = rnvu + run(rnvu('HB1'), IPS=2, ICP=['K_p',11], ILP=1, NTST=100, NPR=2000, NMX=1000000)
+#rnvu = rnvu + run(rnvu('HB2'), IPS=2, ICP=['K_p',11], ILP=1, NTST=100, NPR=2000, NMX=1000000)
+
+# Save the data
+save(rnvu, 'rnvu')
+clean()
+
+# Plot the bifurcation diagram
+@pp rnvu
+
+
+
+

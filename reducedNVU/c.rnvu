@@ -6,7 +6,7 @@
 NDIM=13
 
 # Output Control
-unames={1: 'Cai', 2: 'Mp', 3: 'AMp', 4: 'AM', 5: 'R', 6: 'si', 7: 'vi', 8: 'wi', 9: 'Ii', 10: 'Caj', #11: 'sj', 12: 'vj', 13: 'Ij'}
+unames={1: 'vi', 2: 'Mp', 3: 'AMp', 4: 'AM', 5: 'Cai', 6: 'si', 7: 'R', 8: 'wi', 9: 'Ii', 10: 'Caj', 11: 'sj', 12: 'vj', 13: 'Ij'}
 parnames={1: 'J_PLC', 2: 'K_p', 11: 'period'}
 NPR=20000
 
@@ -14,8 +14,8 @@ NPR=20000
 ICP=['J_PLC']
 
 # Limits
-UZSTOP={'J_PLC': [0.1, 1.0], 'K_p': [3000.0, 10500.0]}, 
-NMX=10000
+UZSTOP={'J_PLC': [0, 1.0], 'K_p': [3000.0, 30000.0]}, 
+NMX=100000
 
 # Computation Constants
 IPS=1 ### Important
